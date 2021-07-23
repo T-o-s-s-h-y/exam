@@ -4,8 +4,12 @@
 require 'prime'
 
 count = 0
+arr = []
 1000.times do |num|
-  count += 1 if Prime.prime?(num + 1)
+  if Prime.prime?(num + 1)
+    count += 1
+    arr << num + 1
+  end
 end
 
-puts count <= 250 ? "素数は#{count}個のため250個以下です" : "素数は#{count}個のため250個より多いです"
+puts count <= 250 ? "素数は#{arr}の#{count}個のため250個以下です" : "素数は#{arr}の#{count}個のため250個より多いです"

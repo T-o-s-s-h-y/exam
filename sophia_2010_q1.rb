@@ -12,7 +12,7 @@ B = 2**600
 C = 50**100
 
 if A > B && A > C
-  puts if B > C ? 'A > B > C' : 'A > C > B'
+  puts B > C ? 'A > B > C' : 'A > C > B'
 elsif B > A && B > C
   puts A > C ? 'B > A > C' : 'B > C > A'
 else

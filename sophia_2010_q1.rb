@@ -4,11 +4,7 @@
 
 # 階乗を計算するメソッド
 def factory(num)
-  if num <= 1
-    1
-  else
-    num * factory(num - 1)
-  end
+  num > 1 ? num * factory(num - 1) : 1
 end
 
 A = factory(100)
@@ -16,19 +12,9 @@ B = 2**600
 C = 50**100
 
 if A > B && A > C
-  if B > C
-    puts 'A > B > C'
-  else
-    puts 'A > C > B'
-  end
+  puts if B > C ? 'A > B > C' : 'A > C > B'
 elsif B > A && B > C
-  if A > C
-    puts 'B > A > C'
-  else
-    puts 'B > C > A'
-  end
-elsif A > B
-  puts 'C > A > B'
+  puts A > C ? 'B > A > C' : 'B > C > A'
 else
-  puts 'C > B > A'
+  puts A > B ? 'C > A > B' : 'C > B > A'
 end
